@@ -5,10 +5,15 @@ def salvar_relatorio(lista_dados):
         print("\nErro: Não há dados para salvar. Cadastre pelo menos um funcionário.")
         return
 
-    nome_arquivo = "relatorio_funcionarios.txt"
+    diretorio_tests = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "tests")
+    
+    if not os.path.exists(diretorio_tests):
+        os.makedirs(diretorio_tests)
+        
+    caminho_arquivo = os.path.join(diretorio_tests, "relatorio_funcionarios.txt")
     
     try:
-        with open(nome_arquivo, "w", encoding="utf-8") as arquivo:
+        with open(caminho_arquivo, "w", encoding="utf-8") as arquivo:
             arquivo.write("="*95 + "\n")
             arquivo.write(f"{'RELATÓRIO DE FUNCIONÁRIOS':^95}\n")
             arquivo.write("="*95 + "\n")
@@ -34,7 +39,7 @@ def salvar_relatorio(lista_dados):
             arquivo.write(f"{'TOTAL PAGO PELA EMPRESA:':<78} R$ {total_pago:>10.2f}\n")
             arquivo.write("="*95 + "\n")
             
-        print(f"\nRelatório salvo com sucesso no arquivo: {os.path.abspath(nome_arquivo)}")
+        print(f"\nRelatório salvo com sucesso no arquivo: {os.path.abspath(caminho_arquivo)}")
         
     except Exception as e:
         print(f"\nErro ao salvar o arquivo: {e}")
