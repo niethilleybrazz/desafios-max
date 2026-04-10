@@ -1,5 +1,6 @@
 from utils.cadastro_funcionario import cadastro_funcionario
 from utils.gerar_relatorio import gerar_relatorio
+from utils.salvar_relatorio import salvar_relatorio
 
 def gerar_menu(lista_dados):
     while True:
@@ -21,7 +22,7 @@ def gerar_menu(lista_dados):
             case 2:
                 gerar_relatorio(lista_dados)
             case 3:
-                print("Salvando relatorio...")
+                salvar_relatorio(lista_dados)
             case 0:
                 print("Saindo...")
                 break
