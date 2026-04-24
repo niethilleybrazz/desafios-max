@@ -5,7 +5,7 @@ from .sales_report import salesReport
 def show_menu():
     switch = 0
     while switch != 4:
-        print("\n==== Bem vindos ao sistema de cadastro ====")
+        print("\n==== Bem vindos ao sistema de cadastro e vendas ====")
         print("1 - Cadastrar produto")
         print("2 - Realizar venda")
         print("3 - Relatorio de vendas")
