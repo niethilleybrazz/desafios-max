@@ -1,6 +1,6 @@
-from product_register import productRegister
-from orders import orderRegister
-from sales_report import salesReport
+from .product_register import productRegister
+from .orders import orderRegister
+from .sales_report import salesReport
 
 def show_menu():
     switch = 0
@@ -11,7 +11,7 @@ def show_menu():
         print("3 - Relatorio de vendas")
         print("4 - Sair")
         try:
-            switch = int(input("Digite a opcao: "))
+            switch = int(input("Digite a opção: "))
         except ValueError:
             print("Por favor, digite um número válido.")
             continue
@@ -25,4 +25,4 @@ def show_menu():
         elif switch == 4:
             print("Saindo...")
         else:
-            print("Opcao inválida")
+            print("Opção inválida")
