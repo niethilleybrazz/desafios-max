@@ -1,16 +1,24 @@
-from .data import products
+from src.data import products
+from src.data import sales
 
 def productRegister():
-    print("\n--- Cadastro de Produto ---")
-    name = input("Nome do produto: ")
-    try:
-        price = float(input("Preço do produto: "))
-        product = {
-            "id": len(products) + 1,
-            "name": name,
-            "price": price
-        }
-        products.append(product)
-        print(f"Produto '{name}' cadastrado com sucesso!")
-    except ValueError:
-        print("Erro: Preço inválido. O produto não foi cadastrado.")
+    print("\n==== Cadastro de Produto ====")
+
+    name = input("Digite o nome do produto: ")
+    price = float(input("Digite o preço do produto: "))
+    quantity = int(input("Digite a quantidade do produto: "))
+
+    product = {
+        "name": name,
+        "price": price,
+        "quantity": quantity
+    }
+    products.append(product)
+    print("\nCadastro realizado com sucesso!")
+
+    print("====== Resumo do Cadastro ======")
+    print(f"Nome: {name}")
+    print(f"Preço: R${price:.2f}")
+    print(f"Quantidade: {quantity}")
+    
+

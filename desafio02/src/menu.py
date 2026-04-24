@@ -7,7 +7,7 @@ def show_menu():
     while switch != 4:
         print("\n==== Bem vindos ao sistema de cadastro ====")
         print("1 - Cadastrar produto")
-        print("2 - Fazer um pedido")
+        print("2 - Realizar venda")
         print("3 - Relatorio de vendas")
         print("4 - Sair")
         try:
